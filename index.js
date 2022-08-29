@@ -38,7 +38,12 @@ app.use('/ranter', ranterController)
 // Home Route
 
 app.get('/', (req, res) => {
-    res.send('Good to Go')
+    res.render('home.ejs')
+})
+
+// 404 Wildcard Route
+app.get('*', (req,res)=>{
+    res.render('404')
 })
 
 
