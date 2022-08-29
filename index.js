@@ -35,6 +35,13 @@ app.set('view engine', 'ejs');
 app.use('/ranter', ranterController)
 
 
+// Home Route
+
+app.get('/', (req, res) => {
+    res.send('Good to Go')
+})
+
+
 
 
 
