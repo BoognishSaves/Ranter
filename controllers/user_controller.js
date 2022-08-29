@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
-const User = require('../models/users.js');
+const Users = require('../models/users.js');
 const Posts = require('../models/posts.js');
 
 
@@ -26,9 +26,9 @@ router.get('/new', (req, res) => {
 // Create Route
 // New User
 router.post('/', async (req, res) => {
-    const createUser = req.body;
     try {
-        const newUser = await db.User.create(createUser);
+        const createUser = req.body;
+        const newUser = await db.Users.create(createUser);
         console.log(createUser);
         res.redirect('/');
     } catch (err) {
