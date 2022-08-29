@@ -20,11 +20,19 @@ db.on( 'open' , ()=>{
   console.log('Connection made!');
 });
 
+// Controller Import
+const ranterController = require('./controllers/ranter_controller.js')
+
 
 // App Configuration 
 const app = express();
 const PORT = 4000
 app.set('view engine', 'ejs');
+
+
+// Middleware
+
+app.use('/ranter', ranterController)
 
 
 
