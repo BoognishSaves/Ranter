@@ -20,7 +20,7 @@ router.get('/new', (req, res) => {
 
 
 
-// New Post
+// Create Post
 router.post('/', async (req, res) => {
     try {
         const createPost = req.body;
@@ -40,6 +40,39 @@ router.post('/', async (req, res) => {
 
 
 // Index Route 
+
+router.get('/', async (req, res) => {
+    try {
+        const allPosts = await db.Posts.find()
+        const context = { posts: allPosts};
+        console.log(allPosts)
+        res.render('postindex.ejs', context);
+    } catch(error) {
+        console.log(error)
+        res.redirect('/404')
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Feed
 

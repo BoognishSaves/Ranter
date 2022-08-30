@@ -44,22 +44,17 @@ router.post('/', async (req, res) => {
 
 // Index Route 
 
-// Feed
-
-router.get('/feed', (req, res) => {
-    res.render('userindex.ejs');
-})
-
-// router.get('/', async (req, res, next) => {
-//     try {
-//         const posts = await Posts.find();
-//         res.render('index.ejs', { posts });
-//     } catch(error) {
-//         console.log(error);
-//         req.error = error;
-//         return next();
-//     }
-// });
+router.get('/', async (req, res) => {
+    try {
+        const allUsers = await db.Users.find()
+        const context = { users: allUsers};
+        console.log(allUsers)
+        res.render('userindex.ejs', context);
+    } catch(error) {
+        console.log(error)
+        res.redirect('/404')
+    }
+});
 
 
 

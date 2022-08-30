@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> This is your user index</h1>
-</body>
+   
+    <body>  
+		
+
+        <section>
+            <div>
+                <h2 class="title">Users</h2>
+            </div>
+        </section>
+
+        <main class="container">
+            <div>
+                <% for( let i = 0; i<users.length; i++){ %>
+                    <% const firstUser = users[i] %>
+                    <ul>
+                    <li><a href="/user/<%= firstUser._id %>"><%= firstUser.name %></a> </li>
+
+                    </ul>
+                <% } %> 
+            </div>
+        </main>
+    
+	</body>
 </html>
