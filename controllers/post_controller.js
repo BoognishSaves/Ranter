@@ -36,7 +36,7 @@ router.get('/new', (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const createPost = req.body;
-        const newPost = await db.Posts.create(createPost);
+        const newPost = await db.Posts.create(createPost)
         console.log(newPost);
         res.redirect('/');
     } catch (err) {
@@ -46,24 +46,7 @@ router.post('/', async (req, res) => {
 });
 
 
-
-
 // Show Route 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -80,16 +63,6 @@ router.get('/feed', (req, res) => {
     res.render('postindex.ejs');
 })
 
-// router.get('/', async (req, res, next) => {
-//     try {
-//         const posts = await Posts.find();
-//         res.render('index.ejs', { posts });
-//     } catch(error) {
-//         console.log(error);
-//         req.error = error;
-//         return next();
-//     }
-// });
 
 
 
