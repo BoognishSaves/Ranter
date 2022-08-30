@@ -24,7 +24,7 @@ router.get('/new', (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const createPost = req.body;
-        const newUser = await db.Posts.create(createPost);
+        const newPost = await db.Posts.create(createPost);
         console.log(createPost);
         res.redirect('/');
     } catch (err) {

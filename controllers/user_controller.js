@@ -47,7 +47,7 @@ router.post('/', async (req, res) => {
 // Feed
 
 router.get('/feed', (req, res) => {
-    res.render('postindex.ejs');
+    res.render('userindex.ejs');
 })
 
 // router.get('/', async (req, res, next) => {
