@@ -6,16 +6,16 @@
 
         <section>
             <div>
-                <h2 class="title">Post Feed</h2>
+                <h2 class="title">Users</h2>
             </div>
         </section>
 
         <main class="container">
             <div>
-                <% for( let i = 0; i<posts.length; i++){ %>
-                    <% const firstPost = posts[i] %>
+                <% for( let i = 0; i<users.length; i++){ %>
+                    <% const firstUser = users[i] %>
                     <ul>
-                    <li><a href="/posts/<%= firstPost._id %>"><%= firstPost.post %></a> </li>
+                    <li><a href="/user/<%= firstUser._id %>"><%= firstUser.name %></a> </li>
 
                     </ul>
                 <% } %> 
