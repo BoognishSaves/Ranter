@@ -12,7 +12,19 @@ const Posts = require('../models/posts.js');
 router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 
+// Index Route 
 
+router.get('/', async (req, res) => {
+    try {
+        const allUsers = await db.Users.find()
+        const context = { users: allUsers};
+        // console.log(allUsers)
+        res.render('userindex.ejs', context);
+    } catch(error) {
+        console.log(error)
+        res.redirect('/404')
+    }
+});
 
 // New Routes
 
@@ -30,7 +42,7 @@ router.post('/', async (req, res) => {
         const createUser = req.body;
         const newUser = await db.Users.create(createUser);
         console.log(createUser);
-        res.redirect('/');
+        res.redirect('/user');
     } catch (err) {
        console.log(err);
        res.redirect('/404')
@@ -42,19 +54,7 @@ router.post('/', async (req, res) => {
 // Show Route 
 
 
-// Index Route 
 
-router.get('/', async (req, res) => {
-    try {
-        const allUsers = await db.Users.find()
-        const context = { users: allUsers};
-        console.log(allUsers)
-        res.render('userindex.ejs', context);
-    } catch(error) {
-        console.log(error)
-        res.redirect('/404')
-    }
-});
 
 
 

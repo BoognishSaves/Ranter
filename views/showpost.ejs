@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <section>
+        <div>
+            <h2 class="title">Post: <%=posts.post%> </h2>
+        </div>
+    </section>
+
+    <main class="container">
+        <div>
+            
+            
+
+            <div>
+                <a href="/post/<%=id%>/edit">Edit Post</a>
+            </div>
+          
+            <div>
+                <p class="control">
+                    <form action="/post/<%= id %>?_method=DELETE" method="POST">
+                            <input class="button is-danger" type="submit" value="Delete Post"/>                    
+                    </form>
+                </p>
+
+    </main>
+
+</body>
+
+</html>
