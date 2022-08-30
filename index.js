@@ -1,5 +1,6 @@
 // Require Modules
 const express = require('express');
+const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 require('dotenv').config()
 
@@ -21,7 +22,8 @@ db.on( 'open' , ()=>{
 });
 
 // Controller Import
-const ranterController = require('./controllers/ranter_controller.js')
+const userController = require('./controllers/user_controller.js')
+const postController = require('./controllers/post_controller.js')
 
 
 // App Configuration 
@@ -31,11 +33,23 @@ app.set('view engine', 'ejs');
 
 
 // Middleware
+app.use(methodOverride('_method'));
+app.use('/user', userController)
+app.use('/post', postController)
 
-app.use('/ranter', ranterController)
+
+// Home Route
+
+app.get('/', (req, res) => {
+    res.render('home.ejs')
+})
 
 
 
+// 404 Wildcard Route
+app.get('*', (req,res)=>{
+    res.render('404')
+})
 
 
 
