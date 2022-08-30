@@ -66,14 +66,15 @@ router.get('/feed', (req, res) => {
 router.get('/:id', async (req, res, next) => {
   try{
       const foundPost = await db.Posts.findById(req.params.id)
-      console.log(foundPost);
-      const context = { posts: foundPost, id: foundPost._id}
+      const postUser = await db.Users.find({post: foundPost})
+      const context = { posts: foundPost, id: foundPost._id, postUser: postUser.username}
+      console.log(postUser);
       res.render("showpost.ejs",context);
   
   }catch(err){
       // throw new Error(err)
       console.log(err)
-      req.err= error;
+      req.error= error;
       return next()
    
   }
