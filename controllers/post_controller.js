@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
-const User = require('../models/users.js');
+const Users = require('../models/users.js');
 const Posts = require('../models/posts.js');
 
 // Middleware
@@ -18,16 +18,20 @@ router.get('/new', (req, res) => {
     res.render('newpost.ejs');
 })
 
-// End New Routes  
 
-// Create Route
-// New Post
-// router.post('/', async (req, res) => {
-//     try {
-//         const Post = await 
-        
-//     }
-// })
+
+// Create Post
+router.post('/', async (req, res) => {
+    try {
+        const createPost = req.body;
+        const newPost = await db.Posts.create(createPost);
+        console.log(createPost);
+        res.redirect('/');
+    } catch (err) {
+       console.log(err);
+       res.redirect('/404')
+    }
+});
 
 
 
@@ -36,6 +40,39 @@ router.get('/new', (req, res) => {
 
 
 // Index Route 
+
+router.get('/', async (req, res) => {
+    try {
+        const allPosts = await db.Posts.find()
+        const context = { posts: allPosts};
+        console.log(allPosts)
+        res.render('postindex.ejs', context);
+    } catch(error) {
+        console.log(error)
+        res.redirect('/404')
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Feed
 

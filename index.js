@@ -1,5 +1,6 @@
 // Require Modules
 const express = require('express');
+const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 require('dotenv').config()
 
@@ -32,7 +33,7 @@ app.set('view engine', 'ejs');
 
 
 // Middleware
-
+app.use(methodOverride('_method'));
 app.use('/user', userController)
 app.use('/post', postController)
 
