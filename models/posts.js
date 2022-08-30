@@ -1,13 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const User = require('./users')
 
 const postSchema = new Schema ({
-    userID: String,
+    userId: {type: String, ref: User},
     post: {type: String, required: true, maxLength: 280},
     image: String,
-    created: {type: Date, default: Date.now},
-    updated: {type: Date, default: Date.now},
-});
+},
+{timestamps:true},
+);
 
 const Posts = mongoose.model('Posts', postSchema);
 

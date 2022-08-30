@@ -9,7 +9,19 @@ const Posts = require('../models/posts.js');
 router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 
+// Index Route 
 
+router.get('/', async (req, res) => {
+    try {
+        const allPosts = await db.Posts.find()
+        const context = { posts: allPosts};
+        console.log(allPosts)
+        res.render('postindex.ejs', context);
+    } catch(error) {
+        console.log(error)
+        res.redirect('/404')
+    }
+});
 
 // New Routes
 
@@ -25,10 +37,10 @@ router.post('/', async (req, res) => {
     try {
         const createPost = req.body;
         const newPost = await db.Posts.create(createPost);
-        console.log(createPost);
+        console.log(newPost);
         res.redirect('/');
     } catch (err) {
-       console.log(err);
+       console.log(err.message);
        res.redirect('/404')
     }
 });
@@ -39,19 +51,7 @@ router.post('/', async (req, res) => {
 // Show Route 
 
 
-// Index Route 
 
-router.get('/', async (req, res) => {
-    try {
-        const allPosts = await db.Posts.find()
-        const context = { posts: allPosts};
-        console.log(allPosts)
-        res.render('postindex.ejs', context);
-    } catch(error) {
-        console.log(error)
-        res.redirect('/404')
-    }
-});
 
 
 
