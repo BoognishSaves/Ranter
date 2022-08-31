@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+  <header class="NPheader">
+    <%- include('partials/header.ejs'); %>
+  </header>
     <head>
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="/styles/main.css"/>
     </head>
-  <body>
-   
+
+  <body id="NPbody">
     <section>
       <div>
-        <h1 class="NewPost">New Post</h1>
+        <h1 class="NPNewPost">New Post</h1>
       </div>
     </section>
-    <main class="container">
+    <main class="NPcontainer">
       <div>
-        <form action="/post" method="POST">
+        <form class="NPform" action="/post" method="POST">
           <div>
             <label for="user-select">User</label>
             <select id="user-select" name="userId">
@@ -24,20 +27,27 @@
               <% }) %>
             </select>
           </div>
+        <form action="/post" method="POST">
           <div>
-            <label for="post">Post</label>
             <input
-              class="post"
+              class="NPinput"
               type="text"
-              placeholder="Rant here/ Max 280 Characters"
+              placeholder="What happened now?"
               name="post"
-              id="post"
+              id="NPpost"
             />
           </div>
-          
-          <button class="button is-info">Create Post</button>
+          <button class="NPbutton">Create Post</button>
         </form>
       </div>
     </main>
   </body>
 </html>
+
+
+
+
+
+
+
+

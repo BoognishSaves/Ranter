@@ -1,31 +1,143 @@
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+.NUimg {
+    height: 100px;
+}
 
-body {
+.NUbody {
     text-align: center;
 }
 
-div {
+#NUtitle {
+    font-size: 50px;
+}
+
+.NUdiv {
     text-align: center;
     padding: 15px;
 }
 
-input {
+.NUinput {
     font-size: 40px;
     border-radius: 15px 15px 15px 15px;
 }
 
-button {
+.NUinput::placeholder {
+    font-size: 30px; 
+    display: flex;
+    align-items: flex-start;
+}
 
+.NUbutton {
     margin: 40px;
     font-size: 15px;
     border-radius: 15px 15px 15px 15px;
 }
 
-.CreateAccount {
+#NPbody {
+    text-align: center;
+}
+.NPNewPost {
     font-size: 50px;
 }
+.NPinput {
+    border-radius: 5px 5px 5px 5px;
+}
+#NPusername {
+    font-size: 30px;
+    position: relative;
+    right: 104px;
+}
+#NPpost {
+    font-size: 50px;
+    height: 200px; 
+    margin: 10px;
+}
+.NPbutton {
+    font-size: large;
+    border-radius: 5px 5px 5px 5px;
+    margin: 50px;
+}
+/* #NPpost {
+    font-size: 40px;
+    position: relative;
+    bottom: 70px;
+} */
 
-.NewPost {
-    font-size: 100px;
+
+
+
+
+.Nnav {
+    float: left;
+    width: 70px;
+    font-size: 25px;
+    position: relative;
+    right: 50px;
+    bottom: 75px;
 }
 
+.Nli {
+    display: flex;
+    flex-direction: column;
+    margin: 90px;
+}
+
+.PIheader {
+    text-align: center;
+}
+
+
+.vl {
+    border-left: 1px solid grey;
+    height: 1500px;
+    position: absolute;
+    left: 250px;
+    margin-left: 3px;
+    top: 120px;
+  }
+
+.PIdiv {
+    text-align: center;
+    position: relative;
+    top: 150px;
+}
+
+
+
+.PItitle{
+    text-align: center;
+    position: relative;
+    top: 0px;
+}
+
+#PIposts {
+    position: relative;
+    top: 30px;
+}
+
+.PIli {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+
+}
+
+.PIsection {
+    width: 500px;
+    position: relative;
+    left: 300px;
+}
+
+.Uheader {
+    text-align: center;
+}
+
+.Usection {
+    text-align: center;
+}
 

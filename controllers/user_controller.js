@@ -60,7 +60,7 @@ router.get('/:id', async (req, res, next) => {
     try{
         const foundUser = await db.Users.findById(req.params.id).populate('userId').exec();
         // const userPost = await db.Posts.find({post: foundUser})
-        const context = { users: foundUser, id: foundUser._id }
+        const context = { users: foundUser, id: foundUser._id}
         // console.log(userPost);
         res.render("showuser.ejs",context);
     
