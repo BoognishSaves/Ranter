@@ -1,0 +1,31 @@
+
+body {
+    text-align: center;
+}
+
+div {
+    text-align: center;
+    padding: 15px;
+}
+
+input {
+    font-size: 40px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+button {
+
+    margin: 40px;
+    font-size: 15px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.CreateAccount {
+    font-size: 50px;
+}
+
+.NewPost {
+    font-size: 100px;
+}
+
+

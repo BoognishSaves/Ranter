@@ -10,12 +10,12 @@
    
     <section>
       <div>
-        <h1 class="NewPost">New Post</h1>
+        <h1 class="NewPost">Edit Post</h1>
       </div>
     </section>
     <main class="container">
       <div>
-        <form action="/post" method="POST">
+        <form action="/post/<%=post._id%>?_method=PUT" method="POST">
          
           <div>
             <label id="username" for="username">Username</label>
@@ -32,7 +32,7 @@
             />
           </div>
           
-          <button class="button is-info">Create Post</button>
+          <button class="button is-info">Edit Post</button>
         </form>
       </div>
     </main>
