@@ -1,31 +1,59 @@
+.NUimg {
+    height: 100px;
+}
 
-body {
+
+.NUbody {
     text-align: center;
 }
 
-div {
+#title {
+    font-size: 50px;
+}
+
+.NUdiv {
     text-align: center;
     padding: 15px;
 }
 
-input {
+.NUinput {
     font-size: 40px;
     border-radius: 15px 15px 15px 15px;
 }
 
-button {
+.NUinput::placeholder {
+    font-size: 30px; 
+    display: flex;
+    align-items: flex-start;
+}
 
+.NUbutton {
     margin: 40px;
     font-size: 15px;
     border-radius: 15px 15px 15px 15px;
 }
 
-.CreateAccount {
+body {
+    text-align: center;
+}
+.NewPost {
     font-size: 50px;
 }
-
-.NewPost {
-    font-size: 100px;
+.NPinput {
+    border-radius: 5px 5px 5px 5px;
 }
-
-
+#NPusername {
+    font-size: 30px;
+    position: relative;
+    right: 104px;
+}
+#NPpost {
+    font-size: 50px;
+    height: 200px; 
+    margin: 10px;
+}
+.NPbutton {
+    font-size: large;
+    border-radius: 5px 5px 5px 5px;
+    margin: 50px;
+}
