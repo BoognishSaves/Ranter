@@ -20,12 +20,12 @@
       <div>
         <form class="NPform" action="/post" method="POST">
           <div>
-            <input 
-            class="NPinput"
-            type="text" 
-            placeholder="username" 
-            name="username" 
-            id="NPusername" />
+            <label for="user-select">User</label>
+            <select id="user-select" name="userId">
+              <% users.forEach(user => { %>
+                <option value="<%= user._id %>"><%= user.username %></option>
+              <% }) %>
+            </select>
           </div>
         <form action="/post" method="POST">
           <div>

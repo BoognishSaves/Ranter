@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/main.css"/>
+  </head>
+
+  <body>
+
+    <header>
+      <%- include('partials/header.ejs'); %>
+    </header>
+    
+    
+    <section>
+      <div>
+        <h1 class="CreateAccount">Edit Your Account</h1>
+      </div>
+    </section>
+    <main class="container">
+      <div>
+        <form action="/user/<%=user._id%>?_method=PUT" method="POST">
+          <div>
+            <!-- <label for="name"> Name</label> -->
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              id="name"
+            />
+          </div>
+          <div>
+            <!-- <label for="username">Username</label> -->
+            <input type="text" placeholder="username" name="username" id="username" />
+          </div>
+          <div>
+            <!-- <label for="email">Email</label> -->
+            <input
+              class="email"
+              type="text"
+              placeholder="your@email.com"
+              name="email"
+              id="email"
+            />
+          </div>
+          <button class="button is-info">Edit User</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

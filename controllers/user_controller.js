@@ -38,7 +38,7 @@ router.get('/new', (req, res) => {
 
 // Create Route
 // New User
-router.post('/', async (req, res) => {
+router.post('/', async (req, res, next) => {
     try {
         const createUser = req.body;
         const newUser = await db.Users.create(createUser);
@@ -58,7 +58,7 @@ router.post('/', async (req, res) => {
 
 router.get('/:id', async (req, res, next) => {
     try{
-        const foundUser = await db.Users.findById(req.params.id)
+        const foundUser = await db.Users.findById(req.params.id).populate('userId').exec();
         // const userPost = await db.Posts.find({post: foundUser})
         const context = { users: foundUser, id: foundUser._id}
         // console.log(userPost);
@@ -75,16 +75,31 @@ router.get('/:id', async (req, res, next) => {
 
     // Delete
 
+    router.delete("/:id", async (req, res, next) => {
+        try{
+            const deleteUser = await db.Users.findByIdAndDelete(req.params.id)
+            return res.redirect("/user")
+
+        }catch(error){
+        // throw new Error(err)
+        console.log(error)
+        req.error= error;
+        return next()
+     
+    }
+    })
+
 
 
 
 
     // Edit
 
-    router.get('/:id/edit', async (req, res) => {
+    router.get('/:id/edit', async (req, res, next) => {
         try{ 
         const foundUser = await db.Users.findById(req.params.id)
-        res.render('edit.ejs', {user: foundUser, id: foundUser._id});
+        res.render('edituser.ejs', {user: foundUser, id: foundUser._id});
+        console.log(foundUser)
 
         }catch(error){
         // throw new Error(err)
@@ -95,10 +110,29 @@ router.get('/:id', async (req, res, next) => {
     }
     });
 
+    // Update 
+
+    router.put("/:id", async (req, res, next) => {
+        try{
+            const updateUser = req.body
+            await db.Users.findByIdAndUpdate(req.params.id, updateUser, {new:true})
+            res.redirect(`/user/${req.params.id}`);
+        }catch(error){
+            // throw new Error(err)
+            console.log(error)
+            req.error= error;
+            return next();
+        }
+    })
 
 
 
 
+// module.exports.account = async (req, res) => {
+//     const userId = req.user._id.toString();
+//     const user = await User.findById(userId);
+//     res
+// }
 
 
 module.exports = router;
