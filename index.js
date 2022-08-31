@@ -33,10 +33,10 @@ app.set('view engine', 'ejs');
 
 
 // Middleware
+app.use(express.static('public'))
 app.use(methodOverride('_method'));
 app.use('/user', userController)
 app.use('/post', postController)
-app.use(express.static('public'))
 
 
 // Home Route

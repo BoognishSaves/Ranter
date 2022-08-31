@@ -16,12 +16,12 @@
     
     <section>
       <div>
-        <h1 class="CreateAccount">Create Your Account</h1>
+        <h1 class="CreateAccount">Edit Your Account</h1>
       </div>
     </section>
     <main class="container">
       <div>
-        <form action="/user" method="POST">
+        <form action="/user/<%=user._id%>?_method=PUT" method="POST">
           <div>
             <!-- <label for="name"> Name</label> -->
             <input
@@ -45,7 +45,7 @@
               id="email"
             />
           </div>
-          <button class="button is-info">Create User</button>
+          <button class="button is-info">Edit User</button>
         </form>
       </div>
     </main>
