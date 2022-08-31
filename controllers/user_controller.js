@@ -60,7 +60,7 @@ router.get('/:id', async (req, res, next) => {
     try{
         const foundUser = await db.Users.findById(req.params.id)
         // const userPost = await db.Posts.find({post: foundUser})
-        const context = { users: foundUser, id: foundUser._id, userPost: }
+        const context = { users: foundUser, id: foundUser._id, }
         // console.log(userPost);
         res.render("showuser.ejs",context);
     
@@ -98,7 +98,11 @@ router.get('/:id', async (req, res, next) => {
 
 
 
-
+module.exports.account = async (req, res) => {
+    const userId = req.user._id.toString();
+    const user = await User.findById(userId);
+    res.render
+}
 
 
 module.exports = router;

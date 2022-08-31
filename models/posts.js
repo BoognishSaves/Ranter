@@ -5,8 +5,8 @@ const User = require('./users')
 const postSchema = new Schema ({
     username: {type: String, required: true},
     post: {type: String, required: true, maxLength: 280},
-    user: {
-        type: mongoose.Types.ObjectId,
+    userId: {
+        type: Schema.Types.ObjectId,
         ref: 'User',
     }
 }, 

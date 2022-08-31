@@ -39,7 +39,7 @@ router.get('/new', (req, res) => {
 
 
 // Create Post
-router.post('/', async (req, res) => {
+router.post('/', async (req, res, next) => {
     try {
         const createPost = req.body;
         const newPost = await db.Posts.create(createPost);
@@ -65,9 +65,9 @@ router.get('/feed', (req, res) => {
 
 router.get('/:id', async (req, res, next) => {
   try{
-      const foundPost = await db.Posts.findById(req.params.id)
-      const postUser = await db.Users.find({post: foundPost})
-      const context = { posts: foundPost, id: foundPost._id, postUser: postUser.username}
+      const foundPost = await db.Posts.findById(req.params.id).populate("userId").exec();
+      const context = { posts: foundPost, id: foundPost._id,}
+      console.log(context)
     //   console.log(postUser);
       res.render("showpost.ejs",context);
   
