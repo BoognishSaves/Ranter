@@ -16,10 +16,13 @@
     <main class="container">
       <div>
         <form action="/post" method="POST">
-         
           <div>
-            <label id="username" for="username">Username</label>
-            <input type="text" placeholder="username" name="username" id="username" />
+            <label for="user-select">User</label>
+            <select id="user-select" name="userId">
+              <% users.forEach(user => { %>
+                <option value="<%= user._id %>"><%= user.username %></option>
+              <% }) %>
+            </select>
           </div>
           <div>
             <label for="post">Post</label>
