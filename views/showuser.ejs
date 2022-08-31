@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <section>
+        <div>
+            <h2 class="title">User: <%=users.username%> </h2>
+        </div>
+    </section>
+
+    <main class="container">
+        <div>
+            
+            <h2 class="'user">Posts:</h2>
+
+            <div>
+                <a href="/user/<%=id%>/edit">Edit User</a>
+            </div>
+          
+            <div>
+                <p class="control">
+                    <form action="/user/<%= id %>?_method=DELETE" method="POST">
+                            <input class="button is-danger" type="submit" value="Delete User"/>                    
+                    </form>
+                </p>
+
+    </main>
+
+</body>
+
+</html>

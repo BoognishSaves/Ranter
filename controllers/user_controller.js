@@ -12,7 +12,20 @@ const Posts = require('../models/posts.js');
 router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
 
+// Index Route 
 
+router.get('/', async (req, res) => {
+    try {
+        const allUsers = await db.Users.find()
+        const context = { users: allUsers};
+        // console.log(allUsers)
+        res.render('userindex.ejs', context);
+    } catch(error) {
+        console.log(error)
+        req.err= error;
+        return next()
+    }
+});
 
 // New Routes
 
@@ -30,31 +43,58 @@ router.post('/', async (req, res) => {
         const createUser = req.body;
         const newUser = await db.Users.create(createUser);
         console.log(createUser);
-        res.redirect('/');
-    } catch (err) {
-       console.log(err);
-       res.redirect('/404')
+        res.redirect('/user');
+    } catch (error) {
+       console.log(error);
+       req.err= error;
+        return next()
     }
 });
+
 
 
 
 // Show Route 
 
-
-// Index Route 
-
-router.get('/', async (req, res) => {
-    try {
-        const allUsers = await db.Users.find()
-        const context = { users: allUsers};
-        console.log(allUsers)
-        res.render('userindex.ejs', context);
-    } catch(error) {
+router.get('/:id', async (req, res, next) => {
+    try{
+        const foundUser = await db.Users.findById(req.params.id)
+        // const userPost = await db.Posts.find({post: foundUser})
+        const context = { users: foundUser, id: foundUser._id}
+        // console.log(userPost);
+        res.render("showuser.ejs",context);
+    
+    }catch(error){
+        // throw new Error(err)
         console.log(error)
-        res.redirect('/404')
+        req.error= error;
+        return next()
+     
     }
-});
+    });
+
+    // Delete
+
+
+
+
+
+    // Edit
+
+    router.get('/:id/edit', async (req, res) => {
+        try{ 
+        const foundUser = await db.Users.findById(req.params.id)
+        res.render('edit.ejs', {user: foundUser, id: foundUser._id});
+
+        }catch(error){
+        // throw new Error(err)
+        console.log(error)
+        req.error= error;
+        return next()
+     
+    }
+    });
+
 
 
 

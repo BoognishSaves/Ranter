@@ -10,10 +10,10 @@
       <link rel="stylesheet" href="/styles/main.css"/>
     </head>
 
-  <body class="NPbody">
+  <body id="NPbody">
     <section>
       <div>
-        <h1 class="NewPost">New Post</h1>
+        <h1 class="NPNewPost">New Post</h1>
       </div>
     </section>
     <main class="NPcontainer">
@@ -27,11 +27,12 @@
             name="username" 
             id="NPusername" />
           </div>
+        <form action="/post" method="POST">
           <div>
             <input
               class="NPinput"
               type="text"
-              placeholder="What's happening?"
+              placeholder="What happened now?"
               name="post"
               id="NPpost"
             />
@@ -42,3 +43,11 @@
     </main>
   </body>
 </html>
+
+
+
+
+
+
+
+
