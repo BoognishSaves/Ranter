@@ -45,8 +45,8 @@ router.post('/', async (req, res) => {
         const newPost = await db.Posts.create(createPost);
         // console.log(createPost);
         res.redirect('/post');
-    } catch (err) {
-       console.log(err);
+    } catch (error) {
+       console.log(error);
        req.err= error;
        return next()
     }
@@ -68,12 +68,12 @@ router.get('/:id', async (req, res, next) => {
       const foundPost = await db.Posts.findById(req.params.id)
       const postUser = await db.Users.find({post: foundPost})
       const context = { posts: foundPost, id: foundPost._id, postUser: postUser.username}
-      console.log(postUser);
+    //   console.log(postUser);
       res.render("showpost.ejs",context);
   
-  }catch(err){
+  }catch(error){
       // throw new Error(err)
-      console.log(err)
+      console.log(error)
       req.error= error;
       return next()
    

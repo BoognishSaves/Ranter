@@ -22,7 +22,8 @@ router.get('/', async (req, res) => {
         res.render('userindex.ejs', context);
     } catch(error) {
         console.log(error)
-        res.redirect('/404')
+        req.err= error;
+        return next()
     }
 });
 
@@ -43,9 +44,10 @@ router.post('/', async (req, res) => {
         const newUser = await db.Users.create(createUser);
         console.log(createUser);
         res.redirect('/user');
-    } catch (err) {
-       console.log(err);
-       res.redirect('/404')
+    } catch (error) {
+       console.log(error);
+       req.err= error;
+        return next()
     }
 });
 
@@ -53,7 +55,24 @@ router.post('/', async (req, res) => {
 
 // Show Route 
 
+// Show Route 
 
+router.get('/:id', async (req, res, next) => {
+    try{
+        const foundUser = await db.Users.findById(req.params.id)
+        // const userPost = await db.Posts.find({post: foundUser})
+        const context = { users: foundUser, id: foundUser._id}
+        // console.log(userPost);
+        res.render("showuser.ejs",context);
+    
+    }catch(error){
+        // throw new Error(err)
+        console.log(error)
+        req.error= error;
+        return next()
+     
+    }
+    });
 
 
 
