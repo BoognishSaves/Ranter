@@ -32,8 +32,15 @@ router.get('/', async (req, res) => {
 // New Routes
 
 // Post
-router.get('/new', (req, res) => {
-    res.render('newpost.ejs');
+router.get('/new', async (req, res) => {
+    try {
+    const allUsers = await db.Users.find()
+    res.render('newpost.ejs', {users: allUsers});
+    } catch (error) {
+        console.log(error);
+       req.err= error;
+       return next()
+    }
 })
 
 
@@ -43,7 +50,7 @@ router.post('/', async (req, res, next) => {
     try {
         const createPost = req.body;
         const newPost = await db.Posts.create(createPost);
-        // console.log(createPost);
+        console.log(newPost);
         res.redirect('/post');
     } catch (error) {
        console.log(error);
@@ -66,10 +73,10 @@ router.get('/feed', (req, res) => {
 router.get('/:id', async (req, res, next) => {
   try{
       const foundPost = await db.Posts.findById(req.params.id).populate("userId").exec();
-      const context = { posts: foundPost, id: foundPost._id,}
+      const context = { posts: foundPost, id: foundPost._id}
       console.log(context)
     //   console.log(postUser);
-      res.render("showpost.ejs",context);
+      res.render("showpost.ejs", context);
   
   }catch(error){
       // throw new Error(err)
