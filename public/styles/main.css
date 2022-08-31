@@ -1,11 +1,12 @@
 a {
     text-decoration: none;
 }
-
+ul {
+    list-style: none;
+}
 .NUimg {
     height: 100px;
 }
-
 
 .NUbody {
     text-align: center;
@@ -106,9 +107,7 @@ a {
     top: 150px;
 }
 
-.PIul {
-    list-style: none;
-}
+
 
 .PItitle{
     text-align: center;
@@ -134,5 +133,11 @@ a {
     left: 300px;
 }
 
+.Uheader {
+    text-align: center;
+}
 
+.Usection {
+    text-align: center;
+}
 
