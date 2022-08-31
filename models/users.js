@@ -5,7 +5,7 @@ const userSchema = new Schema ({
     name: {type: String, required: true},
     username: {type: String, required: true, unique: true, min: 3, max: 20},
     email: {type: String, required: true, unique: true},
-    posts: Array,
+    posts: [{type: Schema.Types.ObjectId, ref: 'Posts'}],
     followers: Array,
     following: Array,
 },
