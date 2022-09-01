@@ -56,10 +56,19 @@ app.use(function (req, res, next) {
   res.locals.user = req.session.currentUser;
   next();
 });
+
+const authRequired = function (req, res, next) {
+  if (req.session.currentUser) {
+    return next();
+  }
+
+  return res.redirect("/login");
+};
+
 app.use(express.static('public'))
 app.use(methodOverride('_method'));
 app.use('/user', userController)
-app.use('/post', postController)
+app.use('/post', authRequired, postController)
 app.use(navLinks);
 // Here we will add the routes for login and register 
 app.use("/", authController);
