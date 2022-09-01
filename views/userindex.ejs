@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+    <header class="Uheader">
+        <%- include('partials/header.ejs'); %>
+      </header>
    
-    <body>  
-		
+    <body id="Ubody">  
+		<nav class="Unav">
+            <%- include('partials/nav.ejs'); %>
+            </nav> 
 
-        <section>
-            <div>
-                <h2 class="title">Users</h2>
+        <section class="Usection">
+            <div class="Udiv">
+                <h2 class="Utitle">Users</h2>
             </div>
-        </section>
+        
 
-        <main class="container">
-            <div>
+        <main class="Ucontainer">
+            <div class="Udiv" id="Uusers">
                 <% for( let i = 0; i<users.length; i++){ %>
                     <% const firstUser = users[i] %>
                     <ul>
                     <li><a href="/user/<%= firstUser._id %>"><%= firstUser.name %></a> </li>
-
                     </ul>
                 <% } %> 
             </div>
         </main>
-    
+    </section>
 	</body>
 </html>

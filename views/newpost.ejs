@@ -1,62 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
- 
-  <body>
-   
+  <header class="NPheader">
+    <%- include('partials/header.ejs'); %>
+  </header>
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="/styles/main.css"/>
+    </head>
+
+  <body id="NPbody">
     <section>
       <div>
-        <h1 class="title">New Post</h1>
+        <h1 class="NPNewPost">New Post</h1>
       </div>
     </section>
-    <main class="container">
+    <main class="NPcontainer">
       <div>
+        <form class="NPform" action="/post" method="POST">
+          <div>
+            <label for="user-select">User</label>
+            <select id="user-select" name="userId">
+              <% users.forEach(user => { %>
+                <option value="<%= user._id %>"><%= user.username %></option>
+              <% }) %>
+            </select>
+          </div>
         <form action="/post" method="POST">
           <div>
-            <label for="name"> Name</label>
             <input
+              class="NPinput"
               type="text"
-              placeholder="Your Name"
-              name="name"
-              id="name"
-            />
-          </div>
-          <div>
-            <label for="username">Username</label>
-            <input type="text" placeholder="username" name="username" id="username" />
-          </div>
-          <div>
-            <label for="post">Post</label>
-            <input
-              class="post"
-              type="text"
-              placeholder="Rant here/ Max 280 Characters"
+              placeholder="What happened now?"
               name="post"
-              id="post"
+              id="NPpost"
             />
           </div>
-          <div>
-            <label for="created">Date Created</label>
-            <input
-              class="created"
-              type="text"
-              placeholder=" 0.0.00"
-              name="created"
-              id="created"
-            />
-          </div>
-          <div>
-            <label for="updated">Updated</label>
-            <input
-              class="updated"
-              type="text"
-              placeholder=" 0.0.00"
-              name="updated"
-              id="updated"
-            />
-          </div>
-          <button class="button is-info">Create Post</button>
+          <button class="NPbutton">Create Post</button>
         </form>
       </div>
     </main>
   </body>
 </html>
+
+
+
+
+
+
+
+
