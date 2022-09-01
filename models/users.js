@@ -5,7 +5,8 @@ const Post = require('./posts')
 const userSchema = new Schema ({
     name: {type: String, required: true},
     username: {type: String, required: true, unique: true, min: 3, max: 20},
-    email: {type: String, required: true, unique: true},
+    email: {type: String, required: [true, 'Please Enter Password']},
+    password: {type: String, required: true},
     posts: [{type: Schema.Types.ObjectId, ref: 'Post'}],
     followers: Array,
     following: Array,
