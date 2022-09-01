@@ -3,15 +3,18 @@ const Schema = mongoose.Schema;
 const Post = require('./posts')
 
 const userSchema = new Schema ({
-    name: {type: String, required: true},
+    name: {type: String},
     username: {type: String, required: true, unique: true, min: 3, max: 20},
-    email: {type: String, required: true, unique: true},
+
+    email: {type: String, required: [true, 'Please Enter Password']},
+    password: {type: String, required: true},
     image: String,
+
     posts: [{type: Schema.Types.ObjectId, ref: 'Post'}],
 },
 {timestamps: true},
 );
 
-const User = mongoose.model('User', userSchema);
+const Users = mongoose.model('Users', userSchema);
 
-module.exports = User;
+module.exports = Users;
