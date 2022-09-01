@@ -4,6 +4,7 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
+const navLinks = require('./navLinks');
 require('dotenv').config()
 
 
@@ -36,12 +37,6 @@ app.set('view engine', 'ejs');
 
 
 // Middleware
-app.use(express.static('public'))
-app.use(methodOverride('_method'));
-app.use('/user', userController)
-app.use('/post', postController)
-// Here we will add the routes for login and register 
-app.use("/", authController);
 app.use(
   session({
       // where to store the sessions in mongodb
@@ -56,6 +51,19 @@ app.use(
       },
   })
 );
+
+app.use(function (req, res, next) {
+  res.locals.user = req.session.currentUser;
+  next();
+});
+app.use(express.static('public'))
+app.use(methodOverride('_method'));
+app.use('/user', userController)
+app.use('/post', postController)
+app.use(navLinks);
+// Here we will add the routes for login and register 
+app.use("/", authController);
+
 
 
 // Home Route
