@@ -6,6 +6,7 @@ const userSchema = new Schema ({
     name: {type: String, required: true},
     username: {type: String, required: true, unique: true, min: 3, max: 20},
     email: {type: String, required: true, unique: true},
+    profileImage: {type: String, required: false},
     posts: [{type: Schema.Types.ObjectId, ref: 'Post'}],
     followers: Array,
     following: Array,
