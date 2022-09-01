@@ -6,7 +6,7 @@ const postSchema = new Schema ({
     post: {type: String, required: true, maxLength: 280},
     userId: {
         type: mongoose.Types.ObjectId,
-        ref: 'User',
+        ref: 'Users',
     },
 }, 
 {timestamps:true});
