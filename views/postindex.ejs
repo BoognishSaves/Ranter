@@ -17,7 +17,7 @@
         </nav>  
         <section class="PIsection">
             <div class="PItitle">
-                <h2>Post Feed</h2>
+                <h2>Rant Feed</h2>
             <div>
                 <img src="">
             </div>        
@@ -28,6 +28,8 @@
                     <% const firstPost = posts[i] %>
                     <ul class="PIul">
                     <li class="PIli"><a href="/post/<%= firstPost._id %>"><%= firstPost.post %></a> </li>
+                    <img src="<%= firstPost.userId.image %>">
+                    <h3><%= firstPost.userId.username %></h3>
                     </ul>
                 <% } %> 
             </div>

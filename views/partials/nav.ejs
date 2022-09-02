@@ -10,14 +10,20 @@
 </head>
 <body id="Nbody">
     </div>
+      
           <!--navigation-->  
       <hr class="horizontal">
       <div class="vl"></div>
       <ul class="Nnav">
         <li class="Nli"><a href="http://localhost:4000/post">Home</a></li>
         <li class="Nli"><a href="http://localhost:4000/post/new">Rant</a>
-        <li class="Nli"><a href="#">Profile</a></li></li>
+           <% if(typeof user != "undefined") { %>
+
+                <li class="Nli"><a href="http://localhost:4000/user/<%=user.id%>">Profile</a>
+            <%} %>
         <li class="Nli"><a href="http://localhost:4000/user">Users</a></li>
+        <li class="Nli"><a href="http://localhost:4000/register">Register</a></li>
+        <li class="Nli"><a href="http://localhost:4000/login">Login</a></li>
       </ul>
 </body>
 </html>

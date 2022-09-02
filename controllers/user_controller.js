@@ -13,7 +13,7 @@ router.use(express.urlencoded({ extended: false }));
 
 // Index Route 
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     try {
         const allUsers = await db.Users.find()
         const context = { users: allUsers};

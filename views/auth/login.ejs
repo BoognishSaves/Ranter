@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+    <header class="Lheader">
+        <%- include('../partials/header.ejs'); %>
+      </header>
 
-  <body class="has-navbar-fixed-top">
+  <body id="NUbody">
   
 
     <section>
-      <div>
+      <div id="NUtitle">
         <h1>Login</h1>
         <form action="/login" method="POST">
-          <div>
-            <label>Email</label>
+          <div class="NUdiv">
             <div>
-              <input
+              <input class="NUinput"
                 name="email"
                 type="email"
                 placeholder="example@domain.com"
               />
             </div>
           </div>
-          <div >
-            <label>Password</label>
+          <div class="NUdiv" >
+           
             <div>
-              <input
+              <input class="NUinput"
                 name="password"
                 type="password"
-                placeholder="******"
+                placeholder="Password"
               />
             </div>
           </div>
           <div>
-            <div>
-              <button>Submit</button>
+            <div class="NUdiv">
+              <button class="NUbutton"><a href="http://localhost:4000/register" target="_blank">Register</a></button>
+              <button class="NUbutton">Submit</button>
             </div>
           </div>
         </form>
