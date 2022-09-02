@@ -39,7 +39,7 @@ ul {
 
 .NUbutton {
     margin: 40px;
-    font-size: 15px;
+    font-size: 25px;
     border-radius: 15px 15px 15px 15px;
 }
 
@@ -123,6 +123,7 @@ ul {
 
 #PIposts {
     position: relative;
+    text-align: left;
     top: 30px;
 }
 
