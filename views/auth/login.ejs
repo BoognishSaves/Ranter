@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <header class="Lheader">
+        <%- include('../partials/header.ejs'); %>
+      </header>
+
+  <body id="NUbody">
+  
+
+    <section>
+      <div id="NUtitle">
+        <h1>Login</h1>
+        <form action="/login" method="POST">
+          <div class="NUdiv">
+            <div>
+              <input class="NUinput"
+                name="email"
+                type="email"
+                placeholder="example@domain.com"
+              />
+            </div>
+          </div>
+          <div class="NUdiv" >
+           
+            <div>
+              <input class="NUinput"
+                name="password"
+                type="password"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+          <div>
+            <div class="NUdiv">
+              <button class="NUbutton"><a href="http://localhost:4000/register" target="_blank">Register</a></button>
+              <button class="NUbutton">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

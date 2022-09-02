@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+     <header class="PIheader">
+        <%- include('partials/header.ejs'); %>
+      </header>
+        <head>
+            
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <link rel="stylesheet" href="/styles/main.css"/>
+        </head>
    
-    <body>  
-		
-
-        <section>
+    <body id="PIbody">
+        <nav class="NPnav">
+        <%- include('partials/nav.ejs'); %>
+        </nav>  
+        <section class="PIsection">
+            <div class="PItitle">
+                <h2>Rant Feed</h2>
             <div>
-                <h2 class="title">Post Feed</h2>
+                <img src="">
+            </div>        
             </div>
-        </section>
-
-        <main class="container">
-            <div>
+        <main class="PIcontainer">
+            <div class="PIdiv" id="PIposts">
                 <% for( let i = 0; i<posts.length; i++){ %>
                     <% const firstPost = posts[i] %>
-                    <ul>
-                    <li><a href="/post/<%= firstPost._id %>"><%= firstPost.post %></a> </li>
-
+                    <ul class="PIul">
+                    <li class="PIli"><a href="/post/<%= firstPost._id %>"><%= firstPost.post %></a> </li>
+                    <img src="<%= firstPost.userId.image %>">
+                    <h3><%= firstPost.userId.username %></h3>
                     </ul>
                 <% } %> 
             </div>
         </main>
-    
+    </section>
 	</body>
 </html>
+
+
+
+
+
+
+
+
+

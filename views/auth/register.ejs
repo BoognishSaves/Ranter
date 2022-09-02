@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <header class="Rheader">
+        <%- include('../partials/header.ejs'); %>
+      </header>
+
+  <body id="NUbody">
+   
+
+    <section class="hero is-fullheight-with-navbar is-link">
+      <div id="NUtitle">
+        <h1 class="title">Register</h1>
+        <form action="/register" method="POST" class="box">
+          <div class="NUdiv">
+            <div class="NUdiv">
+              <input
+                name="username"
+                class="NUinput"
+                type="text"
+                placeholder="Username"
+              />
+            </div>
+          </div>
+          <div id="NUtitle">
+            <div class="control">
+              <input
+                name="email"
+                class="NUinput"
+                type="email"
+                placeholder="example@domain.com"
+              />
+            </div>
+          </div>
+          <div class="NUdiv">
+            <div class="NUdiv">
+              <input
+                name="password"
+                class="NUinput"
+                type="password"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <button class="NUbutton"><a href="http://localhost:4000/login" target="_blank">Login</a></button>
+              <button class="NUbutton">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <main class="container is-max-widescreen"></main>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="/styles/main.css"/>
+    </head>
+  <body>
+   
+    <section>
+      <div>
+        <h1 class="NewPost">Edit Post</h1>
+      </div>
+    </section>
+    <main class="container">
+      <div>
+        <form action="/post/<%=post._id%>?_method=PUT" method="POST">
+         
+          <div>
+            <label id="username" for="username">Username</label>
+            <input type="text" placeholder="username" name="username" id="username" />
+          </div>
+          <div>
+            <label for="post">Post</label>
+            <input
+              class="post"
+              type="text"
+              placeholder="Rant here/ Max 280 Characters"
+              name="post"
+              id="post"
+            />
+          </div>
+          
+          <button class="button is-info">Edit Post</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
