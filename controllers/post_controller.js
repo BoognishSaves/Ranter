@@ -16,7 +16,7 @@ router.use(methodOverride('_method'));
 
 // Index Route 
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     try {
         const allPosts = await db.Posts.find()
         const context = { posts: allPosts};
@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
 // New Routes
 
 // Post
-router.get('/new', async (req, res) => {
+router.get('/new', async (req, res, next) => {
     try {
     const allUsers = await db.Users.find()
     res.render('newpost.ejs', {users: allUsers});

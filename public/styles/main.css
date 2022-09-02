@@ -12,7 +12,7 @@ ul {
     border-radius: 50;
 }
 
-.NUbody {
+#NUbody {
     text-align: center;
 }
 
@@ -22,6 +22,7 @@ ul {
 
 .NUdiv {
     text-align: center;
+    font-size: 40px;
     padding: 15px;
 }
 
@@ -38,12 +39,14 @@ ul {
 
 .NUbutton {
     margin: 40px;
-    font-size: 15px;
+    font-size: 25px;
     border-radius: 15px 15px 15px 15px;
 }
 
 #NPbody {
     text-align: center;
+    
+    
 }
 .NPNewPost {
     font-size: 50px;
@@ -83,12 +86,14 @@ ul {
     position: relative;
     right: 50px;
     bottom: 75px;
+    
 }
 
 .Nli {
     display: flex;
     flex-direction: column;
     margin: 90px;
+    
 }
 
 .PIheader {
@@ -121,6 +126,7 @@ ul {
 
 #PIposts {
     position: relative;
+    text-align: left;
     top: 30px;
 }
 
@@ -134,7 +140,9 @@ ul {
 .PIsection {
     width: 500px;
     position: relative;
-    left: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 .Uheader {
