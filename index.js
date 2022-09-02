@@ -32,7 +32,7 @@ const authController = require('./controllers/auth_controller.js')
 
 // App Configuration 
 const app = express();
-const PORT = 4000
+const PORT = process.env.PORT || 4000
 app.set('view engine', 'ejs');
 
 
