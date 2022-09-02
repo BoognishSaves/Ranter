@@ -16,11 +16,12 @@ router.use(methodOverride('_method'));
 
 // Index Route 
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     try {
-        const allPosts = await db.Posts.find()
-        const context = { posts: allPosts};
-        // console.log(allPosts)
+        const foundUsers = await db.Users.findById(req.params.id)
+        const allPosts = await db.Posts.find().populate('userId').exec();
+        const context = { posts: allPosts, image: foundUsers};
+        console.log(allPosts[0])
         res.render('postindex.ejs', context);
     } catch(error) {
         console.log(error)
@@ -32,7 +33,7 @@ router.get('/', async (req, res) => {
 // New Routes
 
 // Post
-router.get('/new', async (req, res) => {
+router.get('/new', async (req, res, next) => {
     try {
     const allUsers = await db.Users.find()
     res.render('newpost.ejs', {users: allUsers});
