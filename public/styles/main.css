@@ -153,3 +153,6 @@ ul {
     text-align: center;
 }
 
+.user-profile-image {
+    border-radius: 100%;
+}
