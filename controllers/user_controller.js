@@ -58,8 +58,9 @@ router.post('/', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try{
         const foundUser = await db.Users.findById(req.params.id).populate().exec();
-        // const userPost = await db.Posts.find({post: foundUser})
-        const context = { users: foundUser, id: foundUser._id}
+        const userPost = await foundUser.posts.create(req.body)
+        await Posts.updateMany({_id: req.params.id}, {$push: {posts: Posts}})
+        const context = { users: foundUser, id: foundUser._id, posts: userPost}
         // console.log(userPost);
         res.render("showuser.ejs",context);
     

@@ -9,8 +9,7 @@ const userSchema = new Schema ({
     email: {type: String, required: [true, 'Please Enter Password']},
     password: {type: String, required: true},
     image: String,
-
-    posts: [{type: Schema.Types.ObjectId, ref: 'Post'}],
+    posts: [{type: mongoose.Types.ObjectId, ref: 'Posts'}],
 },
 {timestamps: true},
 );
