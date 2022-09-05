@@ -20,7 +20,7 @@
                 <% for( let i = 0; i<users.length; i++){ %>
                     <% const firstUser = users[i] %>
                     <ul>
-                    <li><a href="/user/<%= firstUser._id %>"><%= firstUser.name %></a> </li>
+                    <li><a href="/user/<%=firstUser._id %>"><%= firstUser.username %></a> </li>
                     </ul>
                 <% } %> 
             </div>
