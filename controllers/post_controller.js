@@ -18,9 +18,10 @@ router.use(methodOverride('_method'));
 
 router.get('/', async (req, res, next) => {
     try {
-        const allPosts = await db.Posts.find()
-        const context = { posts: allPosts};
-        // console.log(allPosts)
+        const foundUsers = await db.Users.findById(req.params.id)
+        const allPosts = await db.Posts.find().populate('userId').exec();
+        const context = { posts: allPosts, image: foundUsers};
+        console.log(allPosts[0])
         res.render('postindex.ejs', context);
     } catch(error) {
         console.log(error)
