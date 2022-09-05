@@ -78,7 +78,6 @@ ul {
 
 
 
-
 .Nnav {
     float: left;
     width: 70px;
@@ -145,6 +144,12 @@ ul {
     
 }
 
+#PIimg {
+    border-radius: 50px;
+    height: 70px;
+    width: 70px;
+}
+
 .Uheader {
     text-align: center;
 }
@@ -153,3 +158,8 @@ ul {
     text-align: center;
 }
 
+#SUimg {
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+}
