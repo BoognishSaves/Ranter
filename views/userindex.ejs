@@ -20,7 +20,7 @@
                 <% for( let i = 0; i<users.length; i++){ %>
                     <% const firstUser = users[i] %>
                     <ul>
-                    <li><a href="/user/<%= firstUser._id %>"><%= firstUser.name %></a> </li>
+                    <li><a href="/user/<%=firstUser._id %>" ><img src="<%= firstUser.image %>" style="width: 80px; height: 80px; border-radius: 100%; display:block; margin-left: auto; margin-right: auto; object-fit: cover;"><%= firstUser.username %></a> </li>
                     </ul>
                 <% } %> 
             </div>
