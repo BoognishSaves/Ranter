@@ -2,7 +2,7 @@
 
 ## Product Description:
 
-### Social media over the last decade has been tasked with keeping their apps interesting and fun while allowing the opinionated to have a place to speak their mind. Statistics show that this combination has lead to a decline in usage because a user cannot meter whether there feed represents their current mood. Our development team saw the need for a new type of social media platform that aims to create a home for what people have to say. Allowing the user to get their views out in public without adding any negativity to their goto social media platform. Ranter is an application designed to let you vent without concern, judment, or alerting your relatives to any conflicting opinions they may have. Similar to Twitter, our platform allows the user to create a profile, post their feelings, and peruse their fellow Ranter's post. Should you develop regret over a past post, Ranter allows you to edit!! Our platform is free of advertisements and flashy design choices that may further agrivate the poster. Implementing a simple layout that resembles a comment card or lengthy letter to the management. Ranter wants the user to have an authentic experience. Furthermore, we  don't allow other Ranters to comment on your posts. Though you may have developed your opinion in the heat of the moment,  we want the thought to remain yours and free judgment.
+### Social media over the last decade has been tasked with keeping their apps interesting and fun while allowing the opinionated to have a place to speak their mind. Statistics show that this combination has lead to a decline in usage because a user cannot meter whether their feed represents their current mood. Our development team saw the need for a new type of social media platform that aims to create a home for what people have to say. Allowing the user to get their views out in public without adding any negativity to their goto social media platform. Ranter is an application designed to let you vent without concern, judgement, or alerting your relatives to any conflicting opinions they may have. Similar to Twitter, our platform allows the user to create a profile, post their feelings, and peruse their fellow Ranter's post. Should you develop regret over a past post, Ranter allows you to edit!! Our platform is free of advertisements and flashy design choices that may further agrivate the poster. Implementing a simple layout that resembles a comment card or lengthy letter to the management. Ranter wants the user to have an authentic experience. Furthermore, we  don't allow other Ranters to comment on your posts. Though you may have developed your opinion in the heat of the moment,  we want the thought to remain yours and free judgment.
 
 ## User Story:
 
@@ -11,7 +11,7 @@
 
 ## Technology Used:
 
-### We utilized express app to render our html pages from ejs templates.
+### We utilized express to render our html pages from ejs templates.
 ### Our RESTful routes utilized a 3 controller system that allowed us to create users with multiple posts and user authentication. 
 ### Mongodb was utilized to host our users, posts, and authorizing databases.
 ### Github was utilized so that all developers could proceed on their tasks and merge onto a final working product.
@@ -44,7 +44,7 @@
 ### Utilizing three controllers (user, posts, auth) gave us the ability to connect a Ranter to their posts and allow them to navigate by Rants or other Ranters. Getting photos and usernames to populate with a post was tricky but we were able to get the desired result by using proper routing and injector use.
 
 
-## Link to Game
+## Link to Ranter
 
 
 https://ranter-demo.herokuapp.com/post

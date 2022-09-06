@@ -61,17 +61,12 @@ router.get("/login", function (req, res) {
 
 router.post("/login", async function (req, res) {
     try {
-        // check if the user exists
+        
         let userInfo = req.body;
         const foundUser = await Users.findOne({ email: userInfo.email });
-        console.log(foundUser);
-        // if not
-        // redirect to register
         if (!foundUser) return res.redirect("/register");
         
-        // if the user exists
-        // validate the user if passwords match -> login
-        // .compare(body password, hashed password) => return true or false
+       
         const match = await bcrypt.compare(userInfo.password, foundUser.password);
     
         // if not match send error
