@@ -1,8 +1,21 @@
 a {
     text-decoration: none;
 }
+a:link, a:visited {
+    color: #a91b0d;
+}
+a:hover {
+    color: #f01e2c;
+}
+body {
+    letter-spacing: 0.4px;
+}
+
 ul {
     list-style: none;
+}
+button {
+    color: #a91b0d;
 }
 .NUimg {
     height: 100px;
@@ -14,6 +27,7 @@ ul {
 
 #NUbody {
     text-align: center;
+    font-family: Roboto;
 }
 
 #NUtitle {
@@ -32,24 +46,25 @@ ul {
 }
 
 .NUinput::placeholder {
-    font-size: 30px; 
+    font-size: 28px; 
     display: flex;
     align-items: flex-start;
 }
 
 .NUbutton {
     margin: 40px;
-    font-size: 25px;
-    border-radius: 15px 15px 15px 15px;
+    font-size: 20px;
+    font-family: Roboto;
+    border-radius: 10px 10px 10px 10px;
 }
 
 #NPbody {
     text-align: center;
-    
-    
+
 }
 .NPNewPost {
     font-size: 50px;
+    font-family: Roboto;
 }
 .NPinput {
     border-radius: 5px 5px 5px 5px;
@@ -69,17 +84,10 @@ ul {
     border-radius: 5px 5px 5px 5px;
     margin: 50px;
 }
-/* #NPpost {
-    font-size: 40px;
-    position: relative;
-    bottom: 70px;
-} */
-
-
-
-
 
 .Nnav {
+    letter-spacing: 1px;
+    font-family: Roboto;
     float: left;
     width: 70px;
     font-size: 25px;
@@ -100,6 +108,10 @@ ul {
     text-align: center;
 }
 
+#PIbody {
+    font-family: Poppins, sans-serif;
+    font-weight: 60px;
+}
 
 .vl {
     border-left: 1px solid grey;
@@ -107,7 +119,7 @@ ul {
     position: absolute;
     left: 250px;
     margin-left: 3px;
-    top: 120px;
+    top: 123px;
   }
 
 .PIdiv {
@@ -115,9 +127,20 @@ ul {
     position: relative;
     top: 150px;
 }
+.PIdivs {
+    display: inline-block;
+}
+#PIusername {
 
-
-
+    position: relative;
+    top: -50px;
+    padding-left: 20px;
+}
+#PIparagraph {
+    position: relative;
+    left: 110px;
+    top: -80px;
+}
 .PItitle{
     text-align: center;
     position: relative;
@@ -125,6 +148,7 @@ ul {
 }
 
 #PIposts {
+    color: black;
     position: relative;
     text-align: left;
     top: 30px;
@@ -145,14 +169,15 @@ ul {
     
 }
 
-.Uheader {
+#PIimg {
+    border-radius: 50px;
+    height: 70px;
+    width: 70px;
+}
+#Ubody {
     text-align: center;
 }
 
-.Usection {
-    text-align: center;
-}
-
-.user-profile-image {
-    border-radius: 100%;
+.Udiv {
+    color: #900603;
 }

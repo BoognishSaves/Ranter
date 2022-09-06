@@ -4,10 +4,11 @@
         <%- include('partials/header.ejs'); %>
       </header>
         <head>
-            
           <meta charset="UTF-8" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
           <link rel="stylesheet" href="/styles/main.css"/>
         </head>
    
@@ -24,13 +25,22 @@
             </div>
         <main class="PIcontainer">
             <div class="PIdiv" id="PIposts">
+                
                 <% for( let i = 0; i<posts.length; i++){ %>
                     <% const firstPost = posts[i] %>
+
+                <div class="PIdivs" id="PIprofilepic">
                     <ul class="PIul">
-                    <li class="PIli"><a href="/post/<%= firstPost._id %>"><%= firstPost.post %></a> </li>
-                    <img src="<%= firstPost.userId.image %>">
-                    <h3><%= firstPost.userId.username %></h3>
+                    <img src="<%= firstPost.userId.image %>" id="PIimg" >
+                </div> 
+                <div class="PIdivs" id="PIusername">
+                    <h3 class="PIh3"><%= firstPost.userId.username %></h3>
+                </div>
+                <div class="PIdivs" id="PIparagraph">
+                    <li class="PIli"><a href="/post/<%= firstPost._id %>"></a><%= firstPost.post %> </li>
+                </div>
                     </ul>
+                
                 <% } %> 
             </div>
         </main>

@@ -1,3 +1,5 @@
+User Story for Ranter
+
 # codesRus - The Karens - SEI-Project 2 - Ranter
 
 ## Product Description:
@@ -7,9 +9,6 @@
 ## User Story:
 
 ### As a Ranter, I want to be able to register for a Ranter account so I can share or post my stories on a public page so that other Ranters may revel in my opinions and assertions. The ability to edit a Rant once it has been posted ensures you get out exactly what you want and can remove any regrettable post. Using this platform will keep Facebook, Twitter, and Instagram are free of negativity and preserve your rational disposition with my peers.  
-
-As a Karen, I want to be able to register for a ranter account so I can share or post my stories on a public page as well as sharing the content of other users. This webpage can be for anyone who has something they want to rant about and wants everyone else to know.  
-
 
 
 ## Technology Used:
@@ -58,8 +57,8 @@ https://ranter-demo.herokuapp.com/post
 =======
 ### Our restful routes utilized a 3 controller system that allowed us to create users with multiple posts and user authentication. 
 ### Mongodb was utilized to host our user posts and authorizing databases.
-###Github was utilized so that all developers could proceed on their tasks and merge onto a final working product.
-###Css was utilized for the styling of all pages.
+### Github was utilized so that all developers could proceed on their tasks and merge onto a final working product.
+### Css was utilized for the styling of all pages.
 
 (https://user-images.githubusercontent.com/100719674/184265274-c4bccab8-9e9d-4f04-a966-7285aa5f50a9.png)
 
