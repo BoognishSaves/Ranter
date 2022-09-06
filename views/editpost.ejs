@@ -7,16 +7,14 @@
       <link rel="stylesheet" href="/styles/main.css"/>
     </head>
   <body>
-   
     <section>
       <div>
-        <h1 class="NewPost">Edit Post</h1>
+      <h1 class="NewPost">Edit Post</h1>
       </div>
     </section>
     <main class="container">
       <div>
         <form action="/post/<%=post._id%>?_method=PUT" method="POST">
-         
           <div>
             <label id="username" for="username">Username</label>
             <input type="text" placeholder="username" name="username" id="username" />
@@ -31,7 +29,6 @@
               id="post"
             />
           </div>
-          
           <button class="button is-info">Edit Post</button>
         </form>
       </div>
