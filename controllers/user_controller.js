@@ -4,12 +4,14 @@ const router = express.Router();
 const db = require('../models');
 const Users = require('../models/users.js');
 const Posts = require('../models/posts.js');
+const { rawListeners } = require('../models/posts.js');
 
 
 // Middleware
 
 router.use(express.json());
 router.use(express.urlencoded({ extended: false }));
+
 
 // Index Route 
 
@@ -26,6 +28,7 @@ router.get('/', async (req, res, next) => {
     }
 });
 
+
 // New Routes
 
 // User
@@ -34,9 +37,9 @@ router.get('/new', (req, res) => {
 })
 
 
-
 // Create Route
 // New User
+
 router.post('/', async (req, res, next) => {
     try {
         const createUser = req.body;
@@ -51,16 +54,13 @@ router.post('/', async (req, res, next) => {
 });
 
 
-
-
 // Show Route 
 
 router.get('/:id', async (req, res, next) => {
     try{
         const foundUser = await db.Users.findById(req.params.id).populate().exec();
-        const userPost = await foundUser.posts.create(req.body)
-        await Posts.updateMany({_id: req.params.id}, {$push: {posts: Posts}})
-        const context = { users: foundUser, id: foundUser._id, posts: userPost}
+        // const userPosts = await Posts.findByIdAndUpdate({_id: "userId"}, {$push: {_id: 'posts'}});
+        const context = { users: foundUser, id: foundUser._id}
         // console.log(userPost);
         res.render("showuser.ejs",context);
     
@@ -69,9 +69,9 @@ router.get('/:id', async (req, res, next) => {
         console.log(error)
         req.error= error;
         return next()
-     
     }
     });
+
 
     // Delete
 
@@ -90,9 +90,6 @@ router.get('/:id', async (req, res, next) => {
     })
 
 
-
-
-
     // Edit
 
     router.get('/:id/edit', async (req, res, next) => {
@@ -126,15 +123,6 @@ router.get('/:id', async (req, res, next) => {
     })
 
 
-
-
-// module.exports.account = async (req, res) => {
-//     const userId = req.user._id.toString();
-//     const user = await User.findById(userId);
-//     res
-// }
-
-
     // Edit
 
     router.get('/:id/edit', async (req, res, next) => {
@@ -165,15 +153,6 @@ router.get('/:id', async (req, res, next) => {
             return next();
         }
     })
-
-
-
-
-// module.exports.account = async (req, res) => {
-//     const userId = req.user._id.toString();
-//     const user = await User.findById(userId);
-//     res
-// }
 
 
 

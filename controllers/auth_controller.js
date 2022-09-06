@@ -49,13 +49,12 @@ router.post("/register", async function (req, res) {
   });
 
 
-
-
 // Login
 
 router.get("/login", function (req, res) {
     res.render("auth/login");
   });
+
 
 // Login Post
 
@@ -92,6 +91,7 @@ router.post("/login", async function (req, res) {
     }
 });
 
+
 // Logout
 
 router.get("/logout", async function (req, res) {
@@ -103,18 +103,6 @@ router.get("/logout", async function (req, res) {
         return res.send(error);
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

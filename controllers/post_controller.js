@@ -13,7 +13,6 @@ router.use(express.urlencoded({ extended: false }));
 router.use(methodOverride('_method'));
 
 
-
 // Index Route 
 
 router.get('/', async (req, res, next) => {
@@ -30,6 +29,7 @@ router.get('/', async (req, res, next) => {
     }
 });
 
+
 // New Routes
 
 // Post
@@ -43,7 +43,6 @@ router.get('/new', async (req, res, next) => {
        return next()
     }
 })
-
 
 
 // Create Post
@@ -68,7 +67,6 @@ router.get('/feed', (req, res) => {
 })
 
 
-
 // Show Route 
 
 router.get('/:id', async (req, res, next) => {
@@ -88,6 +86,7 @@ router.get('/:id', async (req, res, next) => {
   }
   });
 
+
      // Delete
 
      router.delete("/:id", async (req, res, next) => {
@@ -103,9 +102,6 @@ router.get('/:id', async (req, res, next) => {
      
     }
     })
-
-
-
 
 
     // Edit
@@ -125,6 +121,7 @@ router.get('/:id', async (req, res, next) => {
     }
     });
 
+
     // Update 
 
     router.put("/:id", async (req, res, next) => {
@@ -139,13 +136,6 @@ router.get('/:id', async (req, res, next) => {
             return next();
         }
     })
-
-
-
-
-
-
-
 
 
 
