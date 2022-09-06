@@ -6,7 +6,7 @@
 
 ## User Story:
 
-### As a Ranter, I want to be able to register for a Ranter account so I can share or post my stories on a public page so that other Ranters may revel in my opinions and assertions. The ability to edit a Rant once it has been posted ensures you get out exactly what you want and can remove any regrettable post. Using this platform will keep Facebook, Twitter, and Instagram are free of negativity and preserve your rational disposition with my peers.  
+### As a Ranter, I want to be able to register for a Ranter account so I can share or post my stories on a public page so that other Ranters may revel in my opinions and assertions. The ability to edit a Rant once it has been posted ensures you get out exactly what you want and can remove any regrettable post. Using this platform will keep Facebook, Twitter, and Instagram are free of negativity and preserve a rational disposition with my peers.  
 
 
 ## Technology Used:
