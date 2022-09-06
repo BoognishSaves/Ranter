@@ -10,7 +10,7 @@ const userSchema = new Schema ({
     password: {type: String, required: true},
     image: String,
 
-    posts: [{type: Schema.Types.ObjectId, ref: 'Post'}],
+    posts: [{type: Schema.Types.ObjectId, ref: 'Posts'}],
 },
 {timestamps: true},
 );
