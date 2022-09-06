@@ -14,6 +14,9 @@ body {
 ul {
     list-style: none;
 }
+button {
+    color: #a91b0d;
+}
 .NUimg {
     height: 100px;
 }
@@ -171,14 +174,10 @@ ul {
     height: 70px;
     width: 70px;
 }
-
-.Uheader {
+#Ubody {
     text-align: center;
 }
+
 .Udiv {
     color: #900603;
 }
-.Usection {
-    text-align: center;
-}
-
