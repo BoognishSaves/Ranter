@@ -38,12 +38,14 @@
 ![User Index](https://user-images.githubusercontent.com/100719674/188498549-efa20953-ac7e-48ad-9192-c156178f939f.png)
 ### The User Index allows the Ranter to view other users and what they have to say.
 
+
 ## Challenging Code:
 
 ### Utilizing three controllers (user, posts, auth) gave us the ability to connect a Ranter to their posts and allow them to navigate by Rants or other Ranters. Getting photos and usernames to populate with a post was tricky but we were able to get the desired result by using proper routing and injector use.
 
 
 ## Link to Game
+
 
 https://ranter-demo.herokuapp.com/post
 
@@ -52,5 +54,3 @@ https://ranter-demo.herokuapp.com/post
 ### We would like to add comments and likes.
 ### Optimize the app for mobile use
 ### We want to give users the ability to upload photos and videos.
-
-
