@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <body>
+    <header class="PIheader">
+        <%- include('partials/header.ejs'); %>
+      </header>
+      <nav class="NPnav">
+        <%- include('partials/nav.ejs'); %>
+        </nav>  
     <section>
         <div>
-            <h2 class="title">Post: <%=posts.post%> </h2>
+            <h2 class="title" style="width: 500px; height: 500px; padding: 25px; margin-bottom: -470px; display:block; margin-left: auto; margin-right: auto;">Post: <%=posts.post%> </h2>
         </div>
     </section>
 
     <main class="container">
-        <div>
+        <div style="width: 300px; height: 300px; border-radius: 100%; display:block; margin-left: auto; margin-right: auto;">
             
-            <h2 class="'user">Posted By: <%=posts.userId.username%></h2>
+            <h2 class="'user" >Posted By: <img src="<%=posts.userId.image%>" style="width: 100px; height: 100px; border-radius: 100%; display:block; "><%=posts.userId.username%></h2>
             
             <div>
-                <a href="/post/<%=id%>/edit">Edit Post</a>
+                <button style="display:block;"><a href="/post/<%=id%>/edit">Edit Post</a></button>
             </div>
             
             <div>
